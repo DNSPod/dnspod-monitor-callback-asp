@@ -6,7 +6,7 @@
  '* @email		mjj@dnspod.com
  '* @version	1.0.0
  '*/
-
+%>
 <!--#include file="md5.asp"-->
 <%
 callback_key   = "mjj"                          ' 添加监控时设置的密钥
