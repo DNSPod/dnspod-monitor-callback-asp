@@ -1,6 +1,7 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
 <%
 '/*
- '* Copyright 2006-2012 DNSPod, Inc.  All Rights Reserved.
+ '* Copyright 2006-2014 DNSPod, Inc.  All Rights Reserved.
  '* 
  '* @author		李院长
  '* @email		mjj@dnspod.com
