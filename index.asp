@@ -1,11 +1,11 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
 <%
 '/*
- '* Copyright 2006-2014 DNSPod, Inc.  All Rights Reserved.
+ '* Copyright 2006-2014 DNSPod, Inc. All Rights Reserved.
  '* 
- '* @author		李院长
- '* @email		mjj@dnspod.com
- '* @version	1.0.0
+ '* @author     李院长
+ '* @email      mjj@dnspod.com
+ '* @version    1.0.0
  '*/
 %>
 <!--#include file="md5.asp"-->
@@ -34,12 +34,12 @@ Else
         ' 宕机恢复
 
         ' ----* 这里是您的代码 *----
-		file_put_contents "log/monitor.log", created_at & " " & monitor_id & " " & status & "(" & status_code & ") " & domain & "(" & domain_id & ") " & sub_domain & "(" & record_id & ") " & record_line & " " & ip
+        file_put_contents "log/monitor.log", created_at & " " & monitor_id & " " & status & "(" & status_code & ") " & domain & "(" & domain_id & ") " & sub_domain & "(" & record_id & ") " & record_line & " " & ip
     ElseIf status = "Down" Then
         ' 已经宕机
 
         ' ----* 这里是您的代码 *----
-		file_put_contents "log/monitor.log", created_at & " " & monitor_id & " " & status & "(" & status_code & ") " & domain & "(" & domain_id & ") " & sub_domain & "(" & record_id & ") " & record_line & " " & ip & " " & reason
+        file_put_contents "log/monitor.log", created_at & " " & monitor_id & " " & status & "(" & status_code & ") " & domain & "(" & domain_id & ") " & sub_domain & "(" & record_id & ") " & record_line & " " & ip & " " & reason
     End If
     
     ' 处理完成
@@ -47,18 +47,18 @@ Else
 End If
 
 Sub file_put_contents(strFile, strText)
-	strFile = Server.MapPath(strFile)
-	Set objFSO = Server.CreateObject("Scripting.FileSystemObject")
+    strFile = Server.MapPath(strFile)
+    Set objFSO = Server.CreateObject("Scripting.FileSystemObject")
 
-	If objFSO.FileExists(strFile) Then
-		Set objFile = objFSO.OpenTextFile(strFile, 8, True)
-	Else
-		Set objFile = objFSO.CreateTextFile(strFile)
-	End If
+    If objFSO.FileExists(strFile) Then
+        Set objFile = objFSO.OpenTextFile(strFile, 8, True)
+    Else
+        Set objFile = objFSO.CreateTextFile(strFile)
+    End If
 
-	objFile.WriteLine(strText)
-	objFile.Close
-	Set objFile = Nothing
-	Set objFSO = Nothing
+    objFile.WriteLine(strText)
+    objFile.Close
+    Set objFile = Nothing
+    Set objFSO = Nothing
 End Sub
 %>
